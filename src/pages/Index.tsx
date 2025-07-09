@@ -84,7 +84,7 @@ const Index = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-white">Why Choose Our App?</h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Built by athletes, for athletes. Simple, effective, and focused on results.
+            Built by time-pressed parents, for the home workout warriors. Simple, effective, and focused on real results.
           </p>
         </div>
 
@@ -132,7 +132,7 @@ const Index = () => {
 
       {/* CTA Section */}
       <div className="container mx-auto px-4 py-20">
-        <Card className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-orange-500/40 backdrop-blur-sm">
+        <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
           <CardContent className="p-12 text-center">
             <h2 className="text-4xl font-bold mb-4 text-white">Ready to Transform Your Training?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -141,7 +141,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div className="flex items-center gap-2 text-orange-300">
                 <CheckCircle className="h-5 w-5" />
-                <span>No signup required</span>
+                <span>7 day free trial</span>
               </div>
               <div className="flex items-center gap-2 text-orange-300">
                 <CheckCircle className="h-5 w-5" />
@@ -149,7 +149,7 @@ const Index = () => {
               </div>
               <div className="flex items-center gap-2 text-orange-300">
                 <CheckCircle className="h-5 w-5" />
-                <span>Completely free</span>
+                <span>Tailored to your needs</span>
               </div>
             </div>
             <div className="mt-8">
@@ -171,7 +171,7 @@ const Index = () => {
       <footer className="border-t border-white/10 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">
-            Built with ❤️ for the CrossFit community
+            Built with ❤️ for all the dads pushing it in the garage 
           </p>
         </div>
       </footer>

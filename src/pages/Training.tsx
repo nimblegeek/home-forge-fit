@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Clock, Target, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const equipment = [
   { id: 'kettlebells', name: 'Kettlebells', icon: '🏋️' },
@@ -57,6 +57,7 @@ const workoutTypes = [
 ];
 
 const Training = () => {
+  const navigate = useNavigate();
   const [selectedEquipment, setSelectedEquipment] = useState<string[]>([]);
   const [selectedWorkout, setSelectedWorkout] = useState<string>('');
   const [duration, setDuration] = useState<number>(20);
@@ -75,14 +76,14 @@ const Training = () => {
       return;
     }
     
-    // Simple workout generation logic
-    console.log('Generating workout with:', {
-      equipment: selectedEquipment,
-      type: selectedWorkout,
-      duration
+    // Navigate to workout display page with parameters
+    navigate('/workout', {
+      state: {
+        equipment: selectedEquipment,
+        type: selectedWorkout,
+        duration
+      }
     });
-    
-    alert(`Workout generated! ${selectedWorkout.toUpperCase()} for ${duration} minutes with your selected equipment.`);
   };
 
   return (
