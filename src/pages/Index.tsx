@@ -69,7 +69,7 @@ const Index = () => {
               </Link>
               <Button 
                 variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg"
+                className="border-orange-500/50 text-orange-300 hover:bg-orange-500/10 hover:border-orange-400 px-8 py-4 text-lg"
                 size="lg"
               >
                 Learn More
@@ -132,22 +132,22 @@ const Index = () => {
 
       {/* CTA Section */}
       <div className="container mx-auto px-4 py-20">
-        <Card className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border-orange-500/30 backdrop-blur-sm">
+        <Card className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-orange-500/40 backdrop-blur-sm">
           <CardContent className="p-12 text-center">
             <h2 className="text-4xl font-bold mb-4 text-white">Ready to Transform Your Training?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of athletes who have revolutionized their home workouts with our simple, effective training app.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center gap-2 text-green-400">
+              <div className="flex items-center gap-2 text-orange-300">
                 <CheckCircle className="h-5 w-5" />
                 <span>No signup required</span>
               </div>
-              <div className="flex items-center gap-2 text-green-400">
+              <div className="flex items-center gap-2 text-orange-300">
                 <CheckCircle className="h-5 w-5" />
                 <span>Works on any device</span>
               </div>
-              <div className="flex items-center gap-2 text-green-400">
+              <div className="flex items-center gap-2 text-orange-300">
                 <CheckCircle className="h-5 w-5" />
                 <span>Completely free</span>
               </div>
