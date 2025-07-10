@@ -8,14 +8,10 @@ import { ArrowLeft, Clock, Target, Zap } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const equipment = [
-  { id: 'kettlebells', name: 'Kettlebells', icon: '🏋️' },
   { id: 'jumpingRope', name: 'Jumping Rope', icon: '🪢' },
-  { id: 'barbells', name: 'Barbells', icon: '🏋️‍♂️' },
-  { id: 'dumbbells', name: 'Dumbbells', icon: '💪' },
-  { id: 'resistanceBands', name: 'Resistance Bands', icon: '🔗' },
-  { id: 'pullupBar', name: 'Pull-up Bar', icon: '🏃‍♂️' },
-  { id: 'medicineBall', name: 'Medicine Ball', icon: '⚽' },
-  { id: 'boxJump', name: 'Box/Step', icon: '📦' },
+  { id: 'resistanceBands', name: 'Rubber Straps', icon: '🔗' },
+  { id: 'bodyweight', name: 'Body Weight', icon: '🤸' },
+  { id: 'kettlebells', name: 'Kettlebells', icon: '🏋️' },
 ];
 
 const workoutTypes = [

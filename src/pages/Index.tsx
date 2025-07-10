@@ -67,13 +67,15 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                className="border-orange-500/50 text-orange-300 hover:bg-orange-500/10 hover:border-orange-400 px-8 py-4 text-lg"
-                size="lg"
-              >
-                Learn More
-              </Button>
+              <Link to="/checkout">
+                <Button 
+                  variant="outline" 
+                  className="border-orange-500/50 text-orange-300 hover:bg-orange-500/10 hover:border-orange-400 px-8 py-4 text-lg"
+                  size="lg"
+                >
+                  Upgrade to Premium
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
