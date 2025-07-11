@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+# 🚀 Home Forge Fit - Complete Tech Stack
 
-## Project info
+## **Frontend Framework**
+- **React 18** - Modern React with hooks and functional components
+- **TypeScript** - Type-safe JavaScript development
+- **Vite** - Fast build tool and development server
 
-**URL**: https://lovable.dev/projects/686a4f29-bbf8-475a-9aed-e7924d18506c
+## **UI & Styling**
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn/ui** - High-quality React components
+- **Lucide React** - Beautiful, customizable icons
+- **Glass-morphism Design** - Modern UI with backdrop blur effects
 
-## How can I edit this code?
+## **Routing & Navigation**
+- **React Router DOM** - Client-side routing
+- **Programmatic Navigation** - Dynamic route handling with state passing
 
-There are several ways of editing your application.
+## **State Management**
+- **React Hooks** - useState, useEffect, useCallback
+- **Local State** - Component-level state management
+- **URL State** - Route-based state passing
 
-**Use Lovable**
+## **Payment Processing**
+- **Stripe** - Payment processing and subscription management
+- **Stripe Pricing Table** - Hosted subscription interface
+- **Stripe Checkout** - Secure payment flow
+- **Webhook Handling** - Subscription event processing
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/686a4f29-bbf8-475a-9aed-e7924d18506c) and start prompting.
+## **Backend & API**
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web application framework
+- **Stripe SDK** - Server-side Stripe integration
+- **CORS** - Cross-origin resource sharing
+- **Environment Variables** - Secure configuration management
 
-Changes made via Lovable will be committed automatically to this repo.
+## **Development Tools**
+- **ESLint** - Code linting and quality
+- **TypeScript Compiler** - Type checking
+- **Vite Dev Server** - Hot module replacement
+- **PostCSS** - CSS processing
 
-**Use your preferred IDE**
+## **Drag & Drop Functionality**
+- **@dnd-kit/core** - Core drag and drop functionality
+- **@dnd-kit/sortable** - Sortable list components
+- **@dnd-kit/utilities** - Utility functions for drag and drop
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## **Project Structure**
+```
+home-forge-fit/
+├── src/
+│   ├── components/
+│   │   ├── ui/                    # Shadcn/ui components
+│   │   ├── Checkout.tsx           # Stripe pricing table
+│   │   └── WorkoutTimer.tsx       # Timer component
+│   ├── pages/
+│   │   ├── Index.tsx              # Landing page
+│   │   ├── Training.tsx           # Workout builder
+│   │   ├── WorkoutDisplay.tsx     # Workout display
+│   │   ├── Success.tsx            # Payment success
+│   │   ├── Cancel.tsx             # Payment cancel
+│   │   └── NotFound.tsx           # 404 page
+│   ├── hooks/                     # Custom React hooks
+│   ├── lib/                       # Utility functions
+│   ├── App.tsx                    # Main app component
+│   └── main.tsx                   # App entry point
+├── stripe-backend/
+│   ├── server.js                  # Express server
+│   ├── package.json               # Backend dependencies
+│   └── .env                       # Environment variables
+├── public/                        # Static assets
+├── package.json                   # Frontend dependencies
+├── tailwind.config.ts            # Tailwind configuration
+├── tsconfig.json                 # TypeScript configuration
+└── vite.config.ts                # Vite configuration
 ```
 
-**Edit a file directly in GitHub**
+## **Key Features & Technologies**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### **�� Core Functionality**
+- **Workout Generation** - Dynamic workout creation based on equipment
+- **Drag & Drop** - Reorderable exercise lists
+- **Timer System** - Work/rest interval timing
+- **Equipment Selection** - Jumping rope, rubber straps, bodyweight, kettlebells
 
-**Use GitHub Codespaces**
+### **�� Payment System**
+- **Subscription Management** - SEK 79/month with 7-day trial
+- **Stripe Integration** - Live payment processing
+- **Webhook Handling** - Real-time subscription events
+- **Success/Cancel Flows** - Complete payment UX
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### **⚡ Performance & Optimization**
+- **Vite Build** - Fast development and production builds
+- **Code Splitting** - Lazy-loaded components
+- **TypeScript** - Compile-time error checking
+- **Tailwind JIT** - Just-in-time CSS compilation
 
-## What technologies are used for this project?
+### **🔒 Security**
+- **Environment Variables** - Secure API key management
+- **CORS Configuration** - Safe cross-origin requests
+- **Stripe Security** - PCI-compliant payment processing
+- **TypeScript** - Runtime error prevention
 
-This project is built with:
+### **📱 Responsive Design**
+- **Mobile-First** - Optimized for all screen sizes
+- **Touch Interactions** - Mobile-friendly drag and drop
+- **Progressive Web App** - Modern web app features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## **Development Environment**
+- **Node.js 18+** - JavaScript runtime
+- **npm/yarn** - Package management
+- **Git** - Version control
+- **VS Code** - Recommended IDE with TypeScript support
 
-## How can I deploy this project?
+## **Deployment Ready**
+- **Frontend**: Vercel, Netlify, or any static hosting
+- **Backend**: Heroku, Railway, or serverless platforms
+- **Environment Variables** - Production configuration
+- **Stripe Live Mode** - Production payment processing
 
-Simply open [Lovable](https://lovable.dev/projects/686a4f29-bbf8-475a-9aed-e7924d18506c) and click on Share -> Publish.
+## **Testing & Quality**
+- **TypeScript** - Static type checking
+- **ESLint** - Code quality and consistency
+- **Stripe Test Mode** - Safe payment testing
+- **Browser Testing** - Cross-browser compatibility
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This tech stack provides a modern, scalable, and maintainable foundation for your fitness application with professional-grade payment processing and user experience!
