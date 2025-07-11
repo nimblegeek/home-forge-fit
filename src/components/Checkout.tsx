@@ -80,7 +80,7 @@ const Checkout: React.FC<CheckoutProps> = ({ onClose }) => {
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-white text-center text-2xl">
-                Choose Your Plan
+                One plan, one price
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
@@ -98,7 +98,7 @@ const Checkout: React.FC<CheckoutProps> = ({ onClose }) => {
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Crown className="h-5 w-5 text-orange-400" />
-                  Why Upgrade?
+                  Why Monthly Membership?
                 </CardTitle>
               </CardHeader>
               <CardContent>
