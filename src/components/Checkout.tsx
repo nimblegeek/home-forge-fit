@@ -1,47 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Star, Zap, Crown } from 'lucide-react';
+import { CheckCircle, Star, Zap, Crown, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+// TypeScript declaration for Stripe pricing table
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'stripe-pricing-table': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'pricing-table-id': string;
+        'publishable-key': string;
+      };
+    }
+  }
+}
 
 interface CheckoutProps {
   onClose?: () => void;
 }
 
 const Checkout: React.FC<CheckoutProps> = ({ onClose }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  useEffect(() => {
+    // Load Stripe pricing table script
+    const script = document.createElement('script');
+    script.src = 'https://js.stripe.com/v3/pricing-table.js';
+    script.async = true;
+    document.head.appendChild(script);
 
-  const handleCheckout = async () => {
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch('http://localhost:4000/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: '', // Optional: pre-fill customer email
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to create checkout session');
+    return () => {
+      // Cleanup script when component unmounts
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
       }
-
-      const { url } = await response.json();
-      
-      // Redirect to Stripe Checkout
-      window.location.href = url;
-    } catch (err) {
-      console.error('Checkout error:', err);
-      setError('Failed to start checkout. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    };
+  }, []);
 
   const features = [
     {
@@ -72,7 +66,7 @@ const Checkout: React.FC<CheckoutProps> = ({ onClose }) => {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
-            Upgrade to Premium
+            Become a monthly member today
           </h1>
           {onClose && (
             <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={onClose}>
@@ -82,65 +76,19 @@ const Checkout: React.FC<CheckoutProps> = ({ onClose }) => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Pricing Card */}
+          {/* Stripe Pricing Table */}
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-white text-center text-2xl">
-                Premium Subscription
+                Choose Your Plan
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-center space-y-6">
-              {/* Price */}
-              <div className="space-y-2">
-                <div className="text-4xl font-bold text-orange-400">
-                  SEK 79
-                </div>
-                <div className="text-gray-300">per month</div>
-              </div>
-
-              {/* Trial Badge */}
-              <Badge className="bg-green-500/20 text-green-300 border-green-500/30 text-lg px-4 py-2">
-                7-Day Free Trial
-              </Badge>
-
-              {/* Features */}
-              <div className="space-y-4 text-left">
-                <div className="text-lg font-semibold text-white mb-4">What's included:</div>
-                {features.map((feature, index) => {
-                  const Icon = feature.icon;
-                  return (
-                    <div key={index} className="flex items-start gap-3">
-                      <Icon className="h-5 w-5 text-orange-400 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <div className="font-medium text-white">{feature.title}</div>
-                        <div className="text-sm text-gray-300">{feature.description}</div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* CTA Button */}
-              <Button
-                onClick={handleCheckout}
-                disabled={isLoading}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold"
-                size="lg"
-              >
-                {isLoading ? 'Loading...' : 'Start 7-Day Free Trial'}
-              </Button>
-
-              {error && (
-                <div className="text-red-400 text-sm mt-2">
-                  {error}
-                </div>
-              )}
-
-              {/* Terms */}
-              <div className="text-xs text-gray-400">
-                By starting your trial, you agree to our Terms of Service and Privacy Policy. 
-                Cancel anytime during the trial period to avoid charges.
-              </div>
+            <CardContent className="text-center">
+              {/* Stripe Pricing Table */}
+              <stripe-pricing-table 
+                pricing-table-id="prctbl_1RjlFpCcLf80njXJ13rDCDxC"
+                publishable-key="pk_live_51PuxRrCcLf80njXJqksaoVp0IN5lvTR1sOEwJdPrxxzxB7sU8gBCL1vjDJChdZ3iiKwUXTuixBTjIlgFcDo1zF0T00JtmLhUPy">
+              </stripe-pricing-table>
             </CardContent>
           </Card>
 
@@ -189,6 +137,23 @@ const Checkout: React.FC<CheckoutProps> = ({ onClose }) => {
                   <div>✓ No hidden fees</div>
                   <div>✓ Secure payment processing</div>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Back to App */}
+            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white text-center">
+                  Continue with Free Features
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <Link to="/training">
+                  <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 py-2">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back to Training
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

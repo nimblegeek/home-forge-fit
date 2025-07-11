@@ -63,7 +63,7 @@ const Index = () => {
                   className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold group"
                   size="lg"
                 >
-                  Try it in the Browser
+                  Try it out in the browser
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -73,7 +73,7 @@ const Index = () => {
                   className="border-orange-500/50 text-orange-300 hover:bg-orange-500/10 hover:border-orange-400 px-8 py-4 text-lg"
                   size="lg"
                 >
-                  Upgrade to Premium
+                  Get started today
                 </Button>
               </Link>
             </div>
